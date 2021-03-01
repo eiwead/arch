@@ -16,6 +16,7 @@ int main(void)
 		GPIOB->BSRR|=0x1;
 		delay(half_period<<n);
 		GPIOB->BSRR|=0x10000;
+		delay(half_period<<n);
 	}
 }
 
