@@ -27,20 +27,15 @@ Project File Date:  03/01/2021
 <h2>Output:</h2>
 *** Using Compiler 'V6.15', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
 Build target 'Target 1'
-assembling startup_stm32f072xb.s...
-compiling system_stm32f0xx.c...
-main.c(24): warning: implicit conversion turns floating-point number into integer: 'double' to 'uint32_t' (aka 'unsigned int') [-Wfloat-conversion]
-                        dec += (bit[i] * pow(2, j));
-                        ~~~~^~~~~~~~~~~~~~~~~~~~~~~
-main.c(45): warning: result of comparison of unsigned expression >= 0 is always true [-Wtautological-unsigned-zero-compare]
+main.c(44): warning: result of comparison of unsigned expression >= 0 is always true [-Wtautological-unsigned-zero-compare]
                 for (uint32_t i = 7; i >= 0; i--)
                                      ~ ^  ~
-2 warnings generated.
+1 warning generated.
 compiling main.c...
 linking...
-Program Size: Code=7992 RO-data=480 RW-data=0 ZI-data=1632  
+Program Size: Code=1584 RO-data=208 RW-data=0 ZI-data=1632  
 FromELF: creating hex file...
-".\Objects\dvm1_3.axf" - 0 Error(s), 2 Warning(s).
+".\Objects\dvm1_3.axf" - 0 Error(s), 1 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -66,8 +61,8 @@ Package Vendor: Keil
    * Component: ARM::CMSIS:CORE:5.4.0
 
    * Component: Keil.Standalone::Device:Startup:1.0.0
-      Include file:  Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f0xx.h
       Source file:   MDK\Device\Source\ARM\STM32F0xx_OPT.s
+      Include file:  Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f0xx.h
       Source file:   Drivers\CMSIS\Device\ST\STM32F0xx\Source\Templates\system_stm32f0xx.c
       Source file:   Drivers\CMSIS\Device\ST\STM32F0xx\Source\Templates\arm\startup_stm32f072xb.s
 Build Time Elapsed:  00:00:01

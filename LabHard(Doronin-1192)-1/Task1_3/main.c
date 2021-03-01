@@ -1,5 +1,4 @@
 #include "main.h"
-#include "math.h"
 
 int main(void)
 {
@@ -21,7 +20,7 @@ int main(void)
 		uint32_t dec = 0; uint32_t div; uint32_t j = 7;
 		for (uint32_t i = 0; i < 8; i++)
 		{
-			dec += (bit[i] * pow(2, j));
+			dec += (bit[i] * power(2, j));
 			j--;
 		}
 		for (uint32_t i = 0; i < 9; i++)
@@ -142,4 +141,16 @@ void output(uint32_t count)
 		GPIOB->BSRR|=0x71;
 	}
 }
+
+uint32_t power(uint32_t x, uint32_t n)
+ {
+    if (n==0)
+        return 1;
+    else if (n==1)
+        return x;
+    else if (n % 2 == 0 )
+        return power( x * x, n/2);
+    else
+        return power( x * x, n /2)*x;
+ }
  
