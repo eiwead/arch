@@ -64,6 +64,7 @@ int main(void)
 				delay(50000);
 			}
 		}
+		GPIOB->BSRR|=0x80;
 		//горит тчк
 		delay(500000);
 	}
@@ -78,71 +79,67 @@ void output(uint32_t count)
 {
 	if (count == 0)
 	{
-		//
+		GPIOB->BSRR|=0x3F;
 	}
 	if (count == 1)
 	{
-		//
+		GPIOB->BSRR|=0x6;
 	}
 	if (count == 2)
 	{
-		//
+		GPIOB->BSRR|=0x5B;
 	}
 	if (count == 3)
 	{
-		//
+		GPIOB->BSRR|=0x4F;
 	}
 	if (count == 4)
 	{
-		//
+		GPIOB->BSRR|=0x66;
 	}
 	if (count == 5)
 	{
-		//
+		GPIOB->BSRR|=0x6D;
 	}
 	if (count == 6)
 	{
-		//
+		GPIOB->BSRR|=0x7D;
 	}
 	if (count == 7)
 	{
-		//
+		GPIOB->BSRR|=0x7;
 	}
 	if (count == 8)
 	{
-		//
+		GPIOB->BSRR|=0x7F;
 	}
 	if (count == 9)
 	{
-		//
+		GPIOB->BSRR|=0x6F;
 	}
-	if (count == 10)
+	if (count == 10) //a
 	{
-		//
+		GPIOB->BSRR|=0x77;
 	}
-	if (count == 11)
+	if (count == 11) //b
 	{
-		//
+		GPIOB->BSRR|=0x7C;
 	}
-	if (count == 12)
+	if (count == 12) //c
 	{
-		//
+		GPIOB->BSRR|=0x39;
 	}
-	if (count == 13)
+	if (count == 13) //d
 	{
-		//
+		GPIOB->BSRR|=0x5E;
 	}
-	if (count == 14)
+	if (count == 14) //e
 	{
-		//
+		GPIOB->BSRR|=0x79;
 	}
-	if (count == 15)
+	if (count == 15) //f
 	{
-		//
-	}
-	if (count == 16)
-	{
-		//
+		GPIOB->BSRR|=0x71;
 	}
 }
  
