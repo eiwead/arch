@@ -6,7 +6,7 @@ int main(void)
 	uint32_t half_period; 
 	uint32_t sw1; uint32_t sw2; uint32_t sw3; uint32_t sw4;
 	uint32_t btn = 14;
-	sw4=((GPIOB->IDR)&0x1000)>>14; sw3=((GPIOB->IDR)&0x2000)>>14; sw2=((GPIOB->IDR)&0x4000)>>14; sw1=((GPIOB->IDR)&0x8000)>>14;
+	sw4=((GPIOB->IDR)&0x1000)>>12; sw3=((GPIOB->IDR)&0x2000)>>13; sw2=((GPIOB->IDR)&0x4000)>>14; sw1=((GPIOB->IDR)&0x8000)>>15;
 	GPIOB->MODER|=GPIO_MODER_MODER0_0 | GPIO_MODER_MODER1_0 | GPIO_MODER_MODER2_0 |
 								GPIO_MODER_MODER3_0 | GPIO_MODER_MODER4_0 | GPIO_MODER_MODER5_0 |
 								GPIO_MODER_MODER6_0 | GPIO_MODER_MODER7_0 | GPIO_MODER_MODER9_0;
@@ -41,7 +41,7 @@ int main(void)
 		}
 		j = 0;
 		uint32_t o;
-		for (uint32_t i = 7; i >= 0; i--)
+		for (uint32_t i = 7; i == 0; i--)
 		{
 			o = num[i];
 			if (j ==0)

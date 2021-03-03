@@ -19,7 +19,7 @@ int main(void)
 	while(1)
 	{
 		n=((GPIOB->IDR)&0x3000)>>12;
-		swreg=((GPIOB->IDR)&0x8000)>>14;
+		swreg=((GPIOB->IDR)&0x8000)>>15;
 		swrev=((GPIOB->IDR)&0x4000)>>14;
 		if(swrev==1)
 		{
