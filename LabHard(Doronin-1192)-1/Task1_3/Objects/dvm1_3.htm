@@ -3,9 +3,9 @@
 <title>Static Call Graph - [.\Objects\dvm1_3.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\dvm1_3.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6150002: Last Updated: Wed Mar  3 12:59:46 2021
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6150002: Last Updated: Wed Mar  3 14:33:06 2021
 <BR><P>
-<H3>Maximum Stack Usage =        160 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
+<H3>Maximum Stack Usage =        168 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
 __rt_entry_main &rArr; main &rArr; power &rArr;  power (Cycle)
 <P>
@@ -180,7 +180,7 @@ Global Symbols
 <P><STRONG><a name="[5f]"></a>__rt_entry_postsh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$00000009))
 
 <P><STRONG><a name="[2f]"></a>__rt_entry_main</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$0000000D))
-<BR><BR>[Stack]<UL><LI>Max Depth = 160 + Unknown Stack Size
+<BR><BR>[Stack]<UL><LI>Max Depth = 168 + Unknown Stack Size
 <LI>Call Chain = __rt_entry_main &rArr; main &rArr; power &rArr;  power (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[31]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;exit
@@ -410,8 +410,8 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[30]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[30]"></a>main</STRONG> (Thumb, 468 bytes, Stack size 136 bytes, main.o(.text.main))
-<BR><BR>[Stack]<UL><LI>Max Depth = 160<LI>Call Chain = main &rArr; power &rArr;  power (Cycle)
+<P><STRONG><a name="[30]"></a>main</STRONG> (Thumb, 484 bytes, Stack size 144 bytes, main.o(.text.main))
+<BR><BR>[Stack]<UL><LI>Max Depth = 168<LI>Call Chain = main &rArr; power &rArr;  power (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uidivmod
 <LI><a href="#[3c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uidiv
@@ -422,7 +422,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[2f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_main
 </UL>
 
-<P><STRONG><a name="[3d]"></a>output</STRONG> (Thumb, 332 bytes, Stack size 4 bytes, main.o(.text.output))
+<P><STRONG><a name="[3d]"></a>output</STRONG> (Thumb, 268 bytes, Stack size 4 bytes, main.o(.text.output))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = output
 </UL>
 <BR>[Called By]<UL><LI><a href="#[30]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main

@@ -51,7 +51,7 @@ int main(void)
 				{
 					output(o);
 					delay(200000);
-					GPIOB->BSRR|=0x0;
+					GPIOB->IDR|=0x0;
 					delay(50000);
 				}
 			}
@@ -59,14 +59,16 @@ int main(void)
 			{
 				output(o);
 				delay(200000);
-				GPIOB->BSRR|=0x0;
+				GPIOB->IDR|=0x0;
 				delay(50000);
 			}
 		}
 		GPIOB->BSRR|=0x80;
 		//горит тчк
 		delay(500000);
-	}
+		GPIOB->IDR|=0x0;
+		delay(500000);
+		}
 }
 
 void delay(uint32_t count)
@@ -78,67 +80,67 @@ void output(uint32_t count)
 {
 	if (count == 0)
 	{
-		GPIOB->BSRR|=0x3F;
+		GPIOB->BSRR=0x3F;
 	}
 	if (count == 1)
 	{
-		GPIOB->BSRR|=0x6;
+		GPIOB->BSRR=0x6;
 	}
 	if (count == 2)
 	{
-		GPIOB->BSRR|=0x5B;
+		GPIOB->BSRR=0x5B;
 	}
 	if (count == 3)
 	{
-		GPIOB->BSRR|=0x4F;
+		GPIOB->BSRR=0x4F;
 	}
 	if (count == 4)
 	{
-		GPIOB->BSRR|=0x66;
+		GPIOB->BSRR=0x66;
 	}
 	if (count == 5)
 	{
-		GPIOB->BSRR|=0x6D;
+		GPIOB->BSRR=0x6D;
 	}
 	if (count == 6)
 	{
-		GPIOB->BSRR|=0x7D;
+		GPIOB->BSRR=0x7D;
 	}
 	if (count == 7)
 	{
-		GPIOB->BSRR|=0x7;
+		GPIOB->BSRR=0x7;
 	}
 	if (count == 8)
 	{
-		GPIOB->BSRR|=0x7F;
+		GPIOB->BSRR=0x7F;
 	}
 	if (count == 9)
 	{
-		GPIOB->BSRR|=0x6F;
+		GPIOB->BSRR=0x6F;
 	}
 	if (count == 10) //a
 	{
-		GPIOB->BSRR|=0x77;
+		GPIOB->BSRR=0x77;
 	}
 	if (count == 11) //b
 	{
-		GPIOB->BSRR|=0x7C;
+		GPIOB->BSRR=0x7C;
 	}
 	if (count == 12) //c
 	{
-		GPIOB->BSRR|=0x39;
+		GPIOB->BSRR=0x39;
 	}
 	if (count == 13) //d
 	{
-		GPIOB->BSRR|=0x5E;
+		GPIOB->BSRR=0x5E;
 	}
 	if (count == 14) //e
 	{
-		GPIOB->BSRR|=0x79;
+		GPIOB->BSRR=0x79;
 	}
 	if (count == 15) //f
 	{
-		GPIOB->BSRR|=0x71;
+		GPIOB->BSRR=0x71;
 	}
 }
 
