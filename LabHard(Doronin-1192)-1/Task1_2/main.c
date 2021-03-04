@@ -6,6 +6,7 @@ int main(void)
 	uint32_t n;
 	uint32_t swreg;
 	uint32_t swrev;
+	uint32_t l;
 	RCC->AHBENR|=RCC_AHBENR_GPIOBEN;
 	GPIOB->MODER|=GPIO_MODER_MODER0_0 | GPIO_MODER_MODER1_0 | GPIO_MODER_MODER2_0 |
 								GPIO_MODER_MODER3_0 | GPIO_MODER_MODER4_0 | GPIO_MODER_MODER5_0 |
@@ -21,54 +22,58 @@ int main(void)
 		n=((GPIOB->IDR)&0x3000)>>12;
 		swreg=((GPIOB->IDR)&0x8000)>>15;
 		swrev=((GPIOB->IDR)&0x4000)>>14;
-		if(swrev==1)
+		if(swrev!=1)
 		{
-			if(swreg==1)
+			if(swreg!=1)
 			{
-				for (uint32_t i = 0; i<9; i++)
+				GPIOB->BSRR=0x100;			
+				for (uint32_t i = 0; i<8; i++)
 				{
-					GPIOB->BSRR|=on[i];
+					GPIOB->BSRR=on[i];
 					delay(half_period<<n);
 				}
-				for (uint32_t j =0; j<9; j++)
+				for (uint32_t j =0; j<8; j++)
 				{
-					GPIOB->BSRR|=off[j];
+					GPIOB->BSRR=off[j];
 					delay(half_period<<n);
 				}			
 			}
 			else
 			{
-				for (uint32_t i = 0; i<9; i++)
+				GPIOB->BSRR=0x100;
+				for (uint32_t i = 0; i<8; i++)
 				{
-					GPIOB->BSRR|=on[i];
+					GPIOB->BSRR=on[i];
 					delay(half_period<<n);
-					GPIOB->BSRR|=off[i];
+					GPIOB->BSRR=off[i];
 				}
 			}
 		}
 		else
 		{
 			{
-			if(swreg==1)
+			if(swreg!=1)
 			{
-				for (uint32_t i = 8; i>0; i--)
+				GPIOB->BSRR=0x100;
+				for (int32_t i = 7; i > -1; i--)
 				{
-					GPIOB->BSRR|=on[i];
+					GPIOB->BSRR=on[i];
 					delay(half_period<<n);
 				}
-				for (uint32_t j =8; j>0; j--)
+				for (int32_t j = 7; j > -1; j--)
 				{
-					GPIOB->BSRR|=off[j];
+					GPIOB->BSRR=off[j];
 					delay(half_period<<n);
 				}			
 			}
 			else
 			{
-				for (uint32_t i = 8; i>0; i--)
+				GPIOB->BSRR=0x100;
+				for (int32_t i = 7; i > -1; i--)
 				{
-					GPIOB->BSRR|=on[i];
+					GPIOB->BSRR=on[i];
 					delay(half_period<<n);
-					GPIOB->BSRR|=off[i];
+					GPIOB->BSRR=off[i];
 				}
 			}
 			}

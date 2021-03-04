@@ -41,7 +41,7 @@ int main(void)
 		}
 		j = 0;
 		uint32_t o;
-		for (uint32_t i = 7; i == 0; i--)
+		for (uint32_t i = 7; i >= 0; i--)
 		{
 			o = num[i];
 			if (j ==0)
@@ -51,7 +51,7 @@ int main(void)
 				{
 					output(o);
 					delay(200000);
-					GPIOB->IDR|=0x0;
+					GPIOB->ODR|=0x200;
 					delay(50000);
 				}
 			}
@@ -59,14 +59,14 @@ int main(void)
 			{
 				output(o);
 				delay(200000);
-				GPIOB->IDR|=0x0;
+				GPIOB->ODR|=0x200;
 				delay(50000);
 			}
 		}
 		GPIOB->BSRR|=0x80;
 		//горит тчк
 		delay(500000);
-		GPIOB->IDR|=0x0;
+		GPIOB->ODR|=0x200;
 		delay(500000);
 		}
 }
@@ -78,70 +78,23 @@ for (uint32_t i=0;i<count;i++);
 
 void output(uint32_t count)
 {
-	if (count == 0)
-	{
-		GPIOB->BSRR=0x3F;
-	}
-	if (count == 1)
-	{
-		GPIOB->BSRR=0x6;
-	}
-	if (count == 2)
-	{
-		GPIOB->BSRR=0x5B;
-	}
-	if (count == 3)
-	{
-		GPIOB->BSRR=0x4F;
-	}
-	if (count == 4)
-	{
-		GPIOB->BSRR=0x66;
-	}
-	if (count == 5)
-	{
-		GPIOB->BSRR=0x6D;
-	}
-	if (count == 6)
-	{
-		GPIOB->BSRR=0x7D;
-	}
-	if (count == 7)
-	{
-		GPIOB->BSRR=0x7;
-	}
-	if (count == 8)
-	{
-		GPIOB->BSRR=0x7F;
-	}
-	if (count == 9)
-	{
-		GPIOB->BSRR=0x6F;
-	}
-	if (count == 10) //a
-	{
-		GPIOB->BSRR=0x77;
-	}
-	if (count == 11) //b
-	{
-		GPIOB->BSRR=0x7C;
-	}
-	if (count == 12) //c
-	{
-		GPIOB->BSRR=0x39;
-	}
-	if (count == 13) //d
-	{
-		GPIOB->BSRR=0x5E;
-	}
-	if (count == 14) //e
-	{
-		GPIOB->BSRR=0x79;
-	}
-	if (count == 15) //f
-	{
-		GPIOB->BSRR=0x71;
-	}
+	uint32_t zero = 0x3f;
+	uint32_t one = 0x6;
+	uint32_t two = 0x5b;
+	uint32_t three = 0x4f;
+	uint32_t four = 0x66;
+	uint32_t five = 0x6d;
+	uint32_t six = 0x7d;
+	uint32_t seven = 0x7;
+	uint32_t eight = 0x8;
+	uint32_t nine = 0x6f;
+	uint32_t a = 0x77;
+	uint32_t b = 0x7c;
+	uint32_t c = 0x39;
+	uint32_t d = 0x5e;
+	uint32_t e = 0x79;
+	uint32_t f = 0x71;
+	uint32_t dot = 0x80;	
 }
 
 uint32_t power(uint32_t x, uint32_t n)
